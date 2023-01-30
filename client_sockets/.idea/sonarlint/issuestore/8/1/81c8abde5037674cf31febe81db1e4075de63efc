@@ -1,0 +1,6 @@
+
+x
+java:S1192+"cDefine a constant instead of duplicating this literal "STOP_SERVER_CONNECTION_FROM_CLIENT" 3 times.(ÍÅ“9
+t	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ
+C
+java:S1948"(Make "client" transient or serializable.(Œôïşúÿÿÿÿ

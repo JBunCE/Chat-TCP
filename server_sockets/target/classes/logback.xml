@@ -1,0 +1,30 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="org.example.configurations.logbackFilters.LogErrorFIlter" />
+        <encoder>
+            <pattern>%d{HH:mm:ss} %highlight([%thread]) %red([%-3level]) - %msg%n</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="CONSOLE-WARN" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="org.example.configurations.logbackFilters.LogWarnFilter" />
+        <encoder>
+            <pattern>%d{HH:mm:ss} %cyan([%thread]) %yellow([%-3level]) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="CONSOLE-INFO" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="org.example.configurations.logbackFilters.LogInfoFilter" />
+        <encoder>
+            <pattern>%d{HH:mm:ss} %cyan([%thread]) %green([%-3level]) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="CONSOLE-WARN"/>
+        <appender-ref ref="CONSOLE-INFO"/>
+    </root>
+</configuration>
+
