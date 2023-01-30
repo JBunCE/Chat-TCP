@@ -1,10 +1,10 @@
 package org.example.server.map;
 
-import com.google.inject.Inject;
+
 import lombok.Setter;
 import org.example.exceptions.ServerRunTimeException;
 import org.example.utilities.ServerResponseSocketImpl;
-import org.example.utilities.interfaces.ILogging;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class MessageAdministrationThreat extends Thread {
                 ServerResponseSocketImpl responseSocket = new ServerResponseSocketImpl();
                 responseSocket.startConnection(client, 3004);
                 responseSocket.sendMessage(this.msg);
-                responseSocket.sendMessage("STOP_SERVER_CONNECTION_FROM_CLIENT");
+                responseSocket.sendMessage("STOP_SERVER_CONNECTION_FROM_SERVER");
             } catch (IOException ex) {
                 throw new ServerRunTimeException(ex.getMessage());
             }

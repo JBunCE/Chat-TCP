@@ -27,6 +27,7 @@ public class MainView extends JFrame{
 
     private ClientRequestSocket client;
     private Boolean serverStatus;
+    private Boolean isFirst = true;
 
     public MainView() throws IOException {
         setContentPane(panel1);
@@ -143,11 +144,7 @@ public class MainView extends JFrame{
                     if (Objects.equals(inputLine, "STOP_SERVER_CONNECTION_FROM_SERVER")) {
                         break;
                     }
-                    if(Objects.equals(textPane1.getText(), "")) {
-                        textPane1.setText(textPane1.getText() + inputLine);
-                        continue;
-                    }
-                    inputLine = "\n" + inputLine;
+                    inputLine = inputLine + "\n";
                     textPane1.setText(textPane1.getText() + inputLine);
                 }
             }catch (IOException e){

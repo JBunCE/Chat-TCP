@@ -14,6 +14,4 @@ public class Main {
         Server server = injector.getInstance(Server.class);
         server.start(3001);
     }
-
-
 }

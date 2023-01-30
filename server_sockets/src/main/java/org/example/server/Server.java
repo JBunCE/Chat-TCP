@@ -1,10 +1,8 @@
 package org.example.server;
 
-import com.google.inject.Guice;
+
 import com.google.inject.Inject;
-import com.google.inject.Injector;
 import lombok.*;
-import org.example.dpi.Module;
 import org.example.exceptions.ServerRunTimeException;
 import org.example.exceptions.ThreadExceptionHandler;
 import org.example.server.map.MessageAdministrationThreat;
@@ -48,6 +46,7 @@ public class Server{
         public void run() {
             while (true) {
                 try {
+                    logging.logInfo("port: " + serverSocket.getLocalPort());
                     ClientHandlerSocket handlerSocket = new ClientHandlerSocket(serverSocket.accept());
                     handlerSocket.setUncaughtExceptionHandler(new ThreadExceptionHandler());
                     handlerSocket.start();
